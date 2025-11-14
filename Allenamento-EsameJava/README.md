@@ -1,4 +1,4 @@
-# imprecazioni su DB
+# MYSQL
 
 CREATE TABLE film (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
