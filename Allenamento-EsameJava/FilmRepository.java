@@ -54,35 +54,35 @@ import java.util.List;
 
 public class NomeRepository {
 
-    public static List<NomeTabella> getAllNomeTabella() throws SQLException {
-        List<NomeTabella> nomeTabellaList = new ArrayList<>();
-        Connection conn = null;
-        PreparedStatement comando = null;
-        try {
-            conn = DriverManager.getConnection(DBConfig.URL, DBConfig.USER, DBConfig.PPW);
-            String query = "SELECT * FROM NOMETABELLA";
-            comando = conn.prepareStatement(query);
-            ResultSet rs = comando.executeQuery();
-            while (rs.next()) {
-                NomeTabella nomeTabella = new nomeTabella (
-                        rs.getTipoVariabile("NomeVariabile"),
-                        rs.getTipoVariabile("NomeVariabile")
-                );
-                NomeTabellaList.add(nomeTabella);
+        public static List<NomeTabella> getAllNomeTabella() throws SQLException {
+            List<NomeTabella> nomeTabellaList = new ArrayList<>();
+            Connection conn = null;
+            PreparedStatement comando = null;
+            try {
+                conn = DriverManager.getConnection(DBConfig.URL, DBConfig.USER, DBConfig.PWD); (se non configuri DBConfig, questo punto sarà sempre in rosso!)
+                String query = "SELECT * FROM NOMETABELLA";
+                comando = conn.prepareStatement(query);
+                ResultSet rs = comando.executeQuery();
+                while (rs.next()) {
+                    NomeTabella nomeTabella = new NomeTabella (
+                        rs.getTipoVariabile("NomeColonna"),
+                        rs.getTipoVariabile("NomeColonna")
+                    );
+                    nomeTabellaList.add(nomeTabella);
+                }
             }
+            catch (SQLException ex){
+                System.out.printf(ex.getMessage());
+            }
+            finally {
+                if (conn !=null)
+                    conn.close();
+                if (comando !=null)
+                    comando.close();
+            }
+            return nomeTabellaList;
         }
-        catch (SQLException ex) {
-            System.out.printf(ex.getMessage());
-        }
-        finally {
-            if (conn !=null)
-                conn.close();
-            if (comando !=null)
-                comando.close();
-        }
-        return nomeTabellaList;
     }
-}
 
 // Esercizi
 public class FilmRepository {
