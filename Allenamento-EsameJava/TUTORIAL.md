@@ -141,7 +141,7 @@ Punto 6, controller:
         import java.sql.SQLException;
         import java.util.List;
 
-        @CrossOrigin(origins = "https://localhost:5173")
+        @CrossOrigin(origins = "http://localhost:5173")
         @RestController
         @RequestMapping("api/nometabella") (segue il percorso per la chiamata api)
             public class NomeTabellaController {
