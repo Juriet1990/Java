@@ -28,7 +28,7 @@ Punto 2, Spring Boot:
         Package name: (non toccare)
     - Successivamente, seleziona:
         Packaging: Jar
-        Configuration: (non toccare)
+        Configuration: YAML
         Java: 17
     - Add Dependencies:
         Lombok
@@ -40,7 +40,7 @@ Punto 2, Spring Boot:
 
 Punto 3, application.yml e DBConfig:
 - Dopo aver unzippato e aperto la cartella su IntelliJ, modifica i seguenti file:
-    - Cerca il file: application e rinominalo in application.yml
+    - Cerca il file: application e rinominalo in application.yml (si può saltare se in configuration su Spring      Initializr selezioni YAML)
         - Cancella tutto il suo contenuto e sostituiscilo con: 
 
             server:
@@ -105,8 +105,8 @@ Punto 5, repository:
                 ResultSet rs = comando.executeQuery();
                 while (rs.next()) {
                     NomeTabella nomeTabella = new NomeTabella (
-                        rs.getTipoVariabile("NomeVariabile"),
-                        rs.getTipoVariabile("NomeVariabile")
+                        rs.getTipoVariabile("NomeColonna"),
+                        rs.getTipoVariabile("NomeColonna")
                     );
                     nomeTabellaList.add(nomeTabella);
                 }
@@ -141,6 +141,7 @@ Punto 6, controller:
         import java.sql.SQLException;
         import java.util.List;
 
+        @CrossOrigin(origins = "https://localhost:5173")
         @RestController
         @RequestMapping("api/nometabella") (segue il percorso per la chiamata api)
             public class NomeTabellaController {
