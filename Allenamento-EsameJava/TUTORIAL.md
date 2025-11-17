@@ -46,7 +46,7 @@ Punto 3, application.yml e DBConfig:
             server:
                 port: 8081
                 application:
-                    name: nometabella
+                    name: nome applicazione
 
     - Crea la cartella: constants, dentro src - main - java/com/nomedb
         - Dentro la cartella crea il file: DBConfig.java, e scrivi:
