@@ -91,7 +91,7 @@ public class FilmRepository {
         Connection conn = null;
         PreparedStatement comando = null;
         try {
-            conn = DriverManager.getConnection(DBConfig.URL, DBConfig.USER, DBConfig.PPW);
+            conn = DriverManager.getConnection(DBConfig.URL, DBConfig.USER, DBConfig.PWD);
             String query = "SELECT * FROM FILM";
             comando = conn.prepareStatement(query);
             ResultSet rs = comando.executeQuery();
@@ -125,7 +125,7 @@ public class FilmRepository {
         Connection conn = null;
         PreparedStatement comando = null;
         try {
-            conn = DriverManager.getConnection(DBConfig.URL, DBConfig.USER, DBConfig.PPW);
+            conn = DriverManager.getConnection(DBConfig.URL, DBConfig.USER, DBConfig.PWD);
             String query = "SELECT * FROM FILM";
             comando = conn.prepareStatement(query);
             ResultSet rs = comando.executeQuery();
