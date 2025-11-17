@@ -170,6 +170,8 @@ Punto 7, frontend:
             })
             .catch(err => console.error(err));
 
+    * Bisogna fare fetch per ogni singola tabella!
+
 - Piccolo promemoria: per collegare HTML e CSS <link rel="stylesheet" href="stile.css">
 
 Punto 8, morire. GG!
