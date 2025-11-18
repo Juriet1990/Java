@@ -1,0 +1,16 @@
+.btn-add, .btn-delete {
+    border-radius: 20%;
+    border: 2px solid;
+    border-color: rgb(216, 157, 216);
+    background-color: rgb(238, 192, 232);
+    font-family:Tahoma;
+    font-size: 15px;
+    height: 70px;
+    width: 70px;
+}
+
+.btn-add:hover, .btn-delete:hover {
+    background-color: rgb(216, 157, 216);
+    color: white;
+}
+
