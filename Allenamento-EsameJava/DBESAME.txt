@@ -46,3 +46,14 @@ INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MAS
 INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('7', 'UPS', 'Economy', '0.7', '5.20');
 INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('8', 'UPS', 'Standard', '3', '6.90');
 INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('9', 'UPS', 'Jumbo', '25', '11.50');
+
+CREATE TABLE voce (
+  id BIGINT AUTO_INCREMENT PRIMARY KEY,
+  ordine_id BIGINT NOT NULL,
+  articolo_id BIGINT NOT NULL,
+  quantita INT NOT NULL,
+
+FOREIGN KEY (ordine_id) REFERENCES ordine(id) ON DELETE CASCADE,
+
+FOREIGN KEY (articolo_id) REFERENCES articolo(id) ON DELETE RESTRICT,
+);
