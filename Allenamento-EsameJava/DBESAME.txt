@@ -1,0 +1,48 @@
+CREATE TABLE ARTICOLO (
+    ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    CODICE VARCHAR(10) NOT NULL,
+    DESCRIZIONE VARCHAR(50) NOT NULL,
+    PESO FLOAT NOT NULL
+    );
+    
+CREATE TABLE ORDINE (
+    ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    NUMERO INT NOT NULL,
+    DATA DATE NOT NULL
+    );
+    
+CREATE TABLE TARIFFA_CORRIERE (
+    ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    NOME_CORRIERE VARCHAR(10) NOT NULL,
+    NOME_TARIFFA VARCHAR(20) NOT NULL,
+    PESO_MASSIMO FLOAT NOT NULL,
+    COSTO FLOAT NOT NULL
+    );
+        
+        
+        
+INSERT INTO `articolo` (`ID`, `CODICE`, `DESCRIZIONE`, `PESO`) VALUES ('1', 'PNDRV8', 'Pen drive USB 8G no brand', '0.15');
+INSERT INTO `articolo` (`ID`, `CODICE`, `DESCRIZIONE`, `PESO`) VALUES ('2', 'DCP-J715E', 'Stampante Brother DCP J715 W', '5.3');     
+INSERT INTO `articolo` (`ID`, `CODICE`, `DESCRIZIONE`, `PESO`) VALUES ('3', 'LNVCX1', 'Notebook Lenovo Carbon X1', '1.9'); 
+INSERT INTO `articolo` (`ID`, `CODICE`, `DESCRIZIONE`, `PESO`) VALUES ('4', 'ALCPPC3', 'Smartphone Alcatel POP C3', '0.53');
+INSERT INTO `articolo` (`ID`, `CODICE`, `DESCRIZIONE`, `PESO`) VALUES ('5', 'BSHT1R', 'Ampli Combo valvolare BlackStar HT 1-R', '6');
+
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('1', '1001', '2025-11-08');
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('2', '1002', '2025-11-10');
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('3', '1003', '2025-11-11');
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('4', '1004', '2025-11-13');
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('5', '1005', '2025-11-15');
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('6', '1006', '2025-11-17');
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('7', '1007', '2025-11-19');
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('8', '1008', '2025-11-20');
+INSERT INTO `ordine` (`ID`, `NUMERO`, `DATA`) VALUES ('9', '1009', '2025-11-21');
+
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('1', 'SDA', 'Economy', '1', '5.90');
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('2', 'SDA', 'Veloce', '5', '7.90');
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('3', 'SDA', 'Bigbox', '30', '12.90');
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('4', 'DHL', 'Veloce', '1.5', '6.50');
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('5', 'DHL', 'Assicurata', '7.5', '9.90');
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('6', 'DHL', 'XXL', '40', '13.90');
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('7', 'UPS', 'Economy', '0.7', '5.20');
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('8', 'UPS', 'Standard', '3', '6.90');
+INSERT INTO `tariffa_corriere` (`ID`, `NOME_CORRIERE`, `NOME_TARIFFA`, `PESO_MASSIMO`, `COSTO`) VALUES ('9', 'UPS', 'Jumbo', '25', '11.50');
